@@ -59,20 +59,16 @@ document.addEventListener('change', (e) => {
     }
 });
 
-
 function sendOrder() {
     const product = document.getElementById('productSelect').value;
     const note = document.getElementById('customNote').value;
-    let selectedColor = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
+    const color = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
     
-    if (selectedColor === "Diger") {
-        selectedColor = document.getElementById('otherColor').value || "Özel Renk Belirtilmedi";
-    }
+    const phone = "90 542 380 19 50";
+    const message = `Merhaba Curly Design! Bir sipariş detayım var:%0A%0A` +
+                    `🛍 Ürün: ${product}%0A` +
+                    `📝 Not: ${note}%0A` +
+                    `🎨 Renk: ${color}`;
     
-    const instagramUser = "curlydesignstudio"; 
-    
-    
-    alert(`Özetiniz:\n🛍 Ürün: ${product}\n🎨 Renk: ${selectedColor}\n📝 Not: ${note}\n\nŞimdi Instagram açılıyor, lütfen DM'den bu detayları gönderin! ✨`);
-
-    window.open(`https://ig.me/m/${instagramUser}`, '_blank');
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
