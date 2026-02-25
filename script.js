@@ -91,10 +91,10 @@ function sendOrder() {
     // 4. MESAJ TASLAĞI
     // \n yerine %0A kullanarak alt satıra geçiyoruz (WP bunu daha çok sever)
     const lineBreak = "%0A";
-    const message = "Merhaba Curly Design! ✨" + lineBreak + lineBreak +
-                    "*Ürün:* " + product + lineBreak +
-                    "*Renk:* " + selectedColor + lineBreak +
-                    "*Not/İsim:* " + note;
+    const message = "Merhaba Curly Design! " + lineBreak + lineBreak +
+                    "Ürün: " + product + lineBreak +
+                    "Renk: " + selectedColor + lineBreak +
+                    "Not/İsim: " + note;
 
     // 5. URL OLUŞTURMA
     // encodeURIComponent tüm mesajı güvenli hale getirir (emoji, boşluk vs.)
@@ -106,6 +106,7 @@ function sendOrder() {
     // 6. YÖNLENDİRME
     window.open(finalUrl, '_blank');
 }
+
 
 
 
