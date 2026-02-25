@@ -63,47 +63,34 @@ document.addEventListener('change', (e) => {
 
 
 
+
 function sendOrder() {
-    // 1. Elementleri seç 
-    const productEl = document.getElementById('productSelect');
-    const noteEl = document.getElementById('customNote');
-    const otherColorEl = document.getElementById('otherColor');
-    
-    const product = productEl ? productEl.value : "Ürün Seçilmedi";
-    const note = noteEl && noteEl.value.trim() !== "" ? noteEl.value.trim() : "Not belirtilmedi";
+    // 1. Verileri Al
+    const product = document.getElementById('productSelect').value;
+    const note = document.getElementById('customNote').value.trim() || "Not belirtilmedi";
     
     // 2. Renk Seçimi
-    let selectedColor = "Belirtilmedi";
-    const checkedRadio = document.querySelector('input[name="color"]:checked');
-    
-    if (checkedRadio) {
-        selectedColor = checkedRadio.value;
-        // Eğer 'Diger' seçildiyse metin kutusunu oku
-        if (selectedColor === "Diger") {
-            selectedColor = (otherColorEl && otherColorEl.value.trim() !== "") ? otherColorEl.value.trim() : "Özel Renk";
-        }
+    let selectedColor = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
+    if (selectedColor === "Diger") {
+        selectedColor = document.getElementById('otherColor').value.trim() || "Ozel Renk";
     }
 
-    // 3. TELEFON NUMARASI (Kesinlikle sadece rakam olmalı!)
-    // Başına + koyma, boşluk bırakma.
     const phone = "905423801950"; 
     
-    // 4. MESAJ TASLAĞI
-    // \n yerine %0A kullanarak alt satıra geçiyoruz (WP bunu daha çok sever)
- const lineBreak = "%0A";
-    const message = "Merhaba Curly Design!" + lineBreak + lineBreak +
-                    "Urun: " + product + lineBreak +
-                    "Renk: " + selectedColor + lineBreak +
-                    "Not/Isim: " + note;
+    // 3. MESAJ TASLAĞI (Burada normal alt satıra geçiyoruz)
+    // Ters eğik çizgi n (\n) JavaScript'te alt satır demektir.
+    const message = `Merhaba Curly Design!
 
-    // 5. URL OLUŞTURMA
-    const finalUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+Urun: ${product}
+Renk: ${selectedColor}
+Not/Isim: ${note}`;
+
+    // 4. URL OLUŞTURMA (En önemli kısım burası)
+    // encodeURIComponent fonksiyonu mesajı WP'nin anlayacağı formata (boşluklar %20, alt satırlar %0A) kendi çevirir.
+    const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     
-    // 6. YÖNLENDİRME
     window.open(finalUrl, '_blank');
 }
-
-
 
 
 
