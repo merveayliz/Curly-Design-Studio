@@ -61,34 +61,51 @@ document.addEventListener('change', (e) => {
 
 
 
+
+
 function sendOrder() {
-    // 1. Formdan verileri çekiyoruz
-    const product = document.getElementById('productSelect').value;
-    const note = document.getElementById('customNote').value.trim() || "Not belirtilmedi";
+    // 1. Elementleri seç 
+    const productEl = document.getElementById('productSelect');
+    const noteEl = document.getElementById('customNote');
+    const otherColorEl = document.getElementById('otherColor');
     
-    // 2. Seçili rengi buluyoruz
-    let selectedColor = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
+    const product = productEl ? productEl.value : "Ürün Seçilmedi";
+    const note = noteEl && noteEl.value.trim() !== "" ? noteEl.value.trim() : "Not belirtilmedi";
     
-    // Eğer 'Diğer' seçildiyse alttaki inputu oku
-    if (selectedColor === "Diger") {
-        const otherValue = document.getElementById('otherColor').value.trim();
-        selectedColor = otherValue ? otherValue : "Özel Renk Belirtilmedi";
+    // 2. Renk Seçimi
+    let selectedColor = "Belirtilmedi";
+    const checkedRadio = document.querySelector('input[name="color"]:checked');
+    
+    if (checkedRadio) {
+        selectedColor = checkedRadio.value;
+        // Eğer 'Diger' seçildiyse metin kutusunu oku
+        if (selectedColor === "Diger") {
+            selectedColor = (otherColorEl && otherColorEl.value.trim() !== "") ? otherColorEl.value.trim() : "Özel Renk";
+        }
     }
-    
-    // 3. TELEFON NUMARASI (Kesinlikle boşluk, artı (+) veya parantez olmamalı!)
+
+    // 3. TELEFON NUMARASI (Kesinlikle sadece rakam olmalı!)
+    // Başına + koyma, boşluk bırakma.
     const phone = "905423801950"; 
     
-    // 4. MESAJI OLUŞTUR (encodeURIComponent kullanarak linki güvenli hale getiriyoruz)
-    const text = `Merhaba Curly Design! ✨\n\n🛍 Ürün: ${product}\n🎨 Renk: ${selectedColor}\n📝 Not: ${note}`;
-    const encodedText = encodeURIComponent(text);
+    // 4. MESAJ TASLAĞI
+    // \n yerine %0A kullanarak alt satıra geçiyoruz (WP bunu daha çok sever)
+    const lineBreak = "%0A";
+    const message = "Merhaba Curly Design! ✨" + lineBreak + lineBreak +
+                    "*Ürün:* " + product + lineBreak +
+                    "*Renk:* " + selectedColor + lineBreak +
+                    "*Not/İsim:* " + note;
+
+    // 5. URL OLUŞTURMA
+    // encodeURIComponent tüm mesajı güvenli hale getirir (emoji, boşluk vs.)
+    const finalUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
     
-    // 5. WHATSAPP'I AÇ (wa.me linki en güvenlisidir)
-    const wpUrl = `https://wa.me/${phone}?text=${encodedText}`;
-    
-    // Konsolda linki kontrol etmek için (F12 basıp bakabilirsin hata olursa)
-    console.log("Gidilecek Link:", wpUrl);
-    
-    window.open(wpUrl, '_blank');
+    // Test için konsola yazdır (F12 ile bakabilirsin)
+    console.log("Bağlanılan URL: ", finalUrl);
+
+    // 6. YÖNLENDİRME
+    window.open(finalUrl, '_blank');
 }
+
 
 
