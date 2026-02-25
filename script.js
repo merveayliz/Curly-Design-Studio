@@ -77,20 +77,19 @@ function sendOrder() {
 
     const phone = "905423801950"; 
     
-    // 3. MESAJ TASLAĞI (Burada normal alt satıra geçiyoruz)
-    // Ters eğik çizgi n (\n) JavaScript'te alt satır demektir.
-    const message = `Merhaba Curly Design!
-
-Urun: ${product}
-Renk: ${selectedColor}
-Not/Isim: ${note}`;
-
-    // 4. URL OLUŞTURMA (En önemli kısım burası)
-    // encodeURIComponent fonksiyonu mesajı WP'nin anlayacağı formata (boşluklar %20, alt satırlar %0A) kendi çevirir.
-    const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    // 3. MESAJ TASLAĞI
     
+    const text = "Merhaba Curly Design!" + "%0A" + "%0A" +
+                 "Urun: " + product + "%0A" +
+                 "Renk: " + selectedColor + "%0A" +
+                 "Not/Isim: " + note;
+
+    // 4. URL OLUŞTURMA
+
+    const finalUrl = "https://wa.me/" + phone + "?text=" + text;
+    
+    // 5. YÖNLENDİRME
     window.open(finalUrl, '_blank');
 }
-
 
 
