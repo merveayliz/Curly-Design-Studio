@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curly Design Studio </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <div class="intro-logo">
+            <h1>Curly Design</h1>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <nav class="navbar">
+            <div class="nav-logo">Curly<span>Design</span>Studio</div>
+        </nav>
+        
+        <header class="hero" id="welcome-text">
+            <h2>El Emeği, Sevgiyle Tasarlandı. ✨</h2>
+            <p>Her bir detay, el emeğiyle ince işçilikle hazırlanmıştır.</p>
+        </header>
+
+        <section id="product-gallery" class="gallery-hidden">
+            <h3 class="gallery-title">Ürünlerimiz</h3>
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/1.jpg" alt="Ürün 1">
+                            <img src="img/2.jpg" alt="Ürün 2">
+                        </div>
+                        <button class="slide-btn prev" onclick="moveSlide(this, -1)">❮</button>
+                        <button class="slide-btn next" onclick="moveSlide(this, 1)">❯</button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Akrilik Nikah Hatırası</h4>
+                        <p>Soft tül detaylı, kişiye özel pleksi tasarım.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/3.jpg" alt="Ürün 3">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Mum Serisi</h4>
+                        <p>İnci ve kuru çiçek detaylı, şık sunumluk mumlar.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/4.jpg" alt="Ürün 4">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Hatıra Magnet</h4>
+                        <p>İncili magnet & Dualı</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/5.jpg" alt="Ürün 5">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Cam Kapaklı Mum</h4>
+                        <p>İnci ve kuru çiçek detaylı, şık sunumluk mumlar.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/6.jpg" alt="Ürün 6">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Şekerli Hediyelik</h4>
+                        <p>Özenle hazırlanmış, şık paketlenmiş hediyelikler.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/7.jpg" alt="Ürün 7">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Lotus Mum Serisi</h4>
+                        <p>İnci ve kuru çiçek detaylı, şık sunumluk mumlar.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/8.jpg" alt="Ürün 8">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Gelin Buketi</h4>
+                        <p>Özgün ve şık bir el buketi.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/9.jpg" alt="Ürün 9">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>İstiridye Mum Serisi</h4>
+                        <p>İnci ve kuru çiçek detaylı, şık sunumluk mumlar.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/10.jpg" alt="Ürün 10">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Mum Ve Anahtarlık Set</h4>
+                        <p>Özgün ve şık bir mum ve anahtarlık seti.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="img/11.jpg" alt="Ürün 11">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>1 Yaş Hediyelik Serisi</h4>
+                        <p>Tavşan detaylı magnetler.</p>
+                        <a href="https://www.instagram.com/curlydesignstudio/" target="_blank" class="order-link">Instagram'dan Sipariş</a>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+
+                
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/curlydesignstudio/" target="_blank">
+                        <i class="fab fa-instagram"></i> @curlydesignstudio
+                    </a>
+                </div>
+                <p class="designer-tag">
+                    Handcrafted by 
+                    <a href="https://www.linkedin.com/in/ayliz-azaklı-74579b318" target="_blank" class="my-signature">aylizdev</a>
+                </p>
+            </div>
+        </footer>
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
