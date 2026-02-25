@@ -90,22 +90,19 @@ function sendOrder() {
     
     // 4. MESAJ TASLAĞI
     // \n yerine %0A kullanarak alt satıra geçiyoruz (WP bunu daha çok sever)
-    const lineBreak = "%0A";
-    const message = "Merhaba Curly Design! " + lineBreak + lineBreak +
-                    "Ürün: " + product + lineBreak +
+ const lineBreak = "%0A";
+    const message = "Merhaba Curly Design!" + lineBreak + lineBreak +
+                    "Urun: " + product + lineBreak +
                     "Renk: " + selectedColor + lineBreak +
-                    "Not/İsim: " + note;
+                    "Not/Isim: " + note;
 
     // 5. URL OLUŞTURMA
-    // encodeURIComponent tüm mesajı güvenli hale getirir (emoji, boşluk vs.)
     const finalUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
     
-    // Test için konsola yazdır (F12 ile bakabilirsin)
-    console.log("Bağlanılan URL: ", finalUrl);
-
     // 6. YÖNLENDİRME
     window.open(finalUrl, '_blank');
 }
+
 
 
 
