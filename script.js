@@ -59,16 +59,33 @@ document.addEventListener('change', (e) => {
     }
 });
 
+
+
 function sendOrder() {
+    // 1. Form değerlerini al
     const product = document.getElementById('productSelect').value;
-    const note = document.getElementById('customNote').value;
-    const color = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
+    const note = document.getElementById('customNote').value || "Not bırakılmadı";
     
-    const phone = "90 542 380 19 50";
-    const message = `Merhaba Curly Design! Bir sipariş detayım var:%0A%0A` +
-                    `🛍 Ürün: ${product}%0A` +
-                    `📝 Not: ${note}%0A` +
-                    `🎨 Renk: ${color}`;
+    // 2. Renk seçimini al
+    let selectedColor = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
     
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    // Eğer 'Diğer' seçildiyse metin kutusundaki özel rengi al
+    if (selectedColor === "Diger") {
+        const otherColorValue = document.getElementById('otherColor').value;
+        selectedColor = otherColorValue ? otherColorValue : "Özel renk belirtilmedi";
+    }
+    
+    // 3. Telefon numarası (Boşluksuz olmalı!)
+    const phone = "905423801950"; 
+    
+    // 4. Mesaj içeriği (Yıldızlar WP'de kalın yazı yapar)
+    const message = `Merhaba Curly Design! ✨%0A%0A` +
+                    `*Ürün:* ${product}%0A` +
+                    `*Renk:* ${selectedColor}%0A` +
+                    `*Not/İsim:* ${note}`;
+    
+    // 5. WhatsApp'ı aç
+    const wpUrl = `https://wa.me/${phone}?text=${message}`;
+    window.open(wpUrl, '_blank');
 }
+
