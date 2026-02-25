@@ -165,7 +165,39 @@
 
                 </div>
         </section>
+<section id="customization-area" class="gallery-hidden">
+    <div class="custom-form-container">
+        <h3>✨ Siparişini Özelleştir</h3>
+        <p>Hayalindeki tasarımı bize anlat, birlikte gerçeğe dönüştürelim.</p>
+        
+        <form id="orderForm">
+            <div class="input-group">
+                <label>Hangi Ürün?</label>
+                <select id="productSelect">
+                    <option value="Nikah Hatırası">Nikah Hatırası</option>
+                    <option value="İstiridye Mum">İstiridye Mum</option>
+                    <option value="Gelin Buketi">Gelin Buketi</option>
+                </select>
+            </div>
 
+            <div class="input-group">
+                <label>Üzerine Yazılacak İsim/Not</label>
+                <input type="text" id="customNote" placeholder="Örn: Merve & Onur 20.10.2026">
+            </div>
+
+            <div class="input-group">
+                <label>Renk Tercihi</label>
+                <div class="color-options">
+                    <input type="radio" name="color" value="Lila" id="lila"> <label for="lila">Lila</label>
+                    <input type="radio" name="color" value="Somon" id="somon"> <label for="somon">Somon</label>
+                    <input type="radio" name="color" value="Beyaz" id="beyaz"> <label for="beyaz">Beyaz</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="sendOrder()" class="order-link-v2">WhatsApp ile Detayları Gönder 💬</button>
+        </form>
+    </div>
+</section>
                 
         <footer class="main-footer">
             <div class="footer-content">
@@ -184,4 +216,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
