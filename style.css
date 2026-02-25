@@ -376,3 +376,33 @@ body {
     box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
 }
 
+.color-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.color-options label {
+    font-weight: 400 !important;
+    background: #fdfdfd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.color-options input[type="radio"]:checked + label {
+    background: var(--soft-purple);
+    color: white;
+    border-color: var(--soft-purple);
+}
+
+.color-options input[type="radio"] {
+    display: none;
+}
+
+#otherColor {
+    border: 1px dashed var(--soft-purple); 
+    background: #fffafa;
+}
