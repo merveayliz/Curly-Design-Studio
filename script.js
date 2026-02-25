@@ -63,7 +63,6 @@ document.addEventListener('change', (e) => {
 
 
 
-
 function sendOrder() {
     // 1. Verileri Al
     const product = document.getElementById('productSelect').value;
@@ -77,19 +76,19 @@ function sendOrder() {
 
     const phone = "905423801950"; 
     
-    // 3. MESAJ TASLAĞI
-    
-    const text = "Merhaba Curly Design!" + "%0A" + "%0A" +
-                 "Urun: " + product + "%0A" +
-                 "Renk: " + selectedColor + "%0A" +
-                 "Not/Isim: " + note;
+    // 3. MESAJI OLUŞTUR (Normal yazıyoruz, şifreleme yapmıyoruz)
+    // \n normal bir alt satırdır. Emojileri direkt içine koyabilirsin.
+    const message = `Merhaba Curly Design! ✨
 
-    // 4. URL OLUŞTURMA
+*Ürün:* ${product}
+*Renk:* ${selectedColor}
+*Not/İsim:* ${note}`;
 
-    const finalUrl = "https://wa.me/" + phone + "?text=" + text;
+    // 4. URL OLUŞTURMA (Hepsini tek seferde burada şifreliyoruz)
+    // encodeURIComponent fonksiyonu hem emojileri hem de \n karakterlerini WP'nin anlayacağı hale getirir.
+    const finalUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
     
     // 5. YÖNLENDİRME
     window.open(finalUrl, '_blank');
 }
-
 
