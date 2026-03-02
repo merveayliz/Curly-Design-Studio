@@ -61,19 +61,18 @@ document.addEventListener('change', (e) => {
 
 
 function sendOrder() {
-    // 1. Verileri Al
+
     const product = document.getElementById('productSelect').value;
     const note = document.getElementById('customNote').value.trim() || "Not belirtilmedi";
     
-    // 2. Renk Seçimi
+   
     let selectedColor = document.querySelector('input[name="color"]:checked')?.value || "Belirtilmedi";
     if (selectedColor === "Diger") {
         selectedColor = document.getElementById('otherColor').value.trim() || "Ozel Renk";
     }
 
-    const phone = "905423801950"; 
+    const phone = ""; 
     
-    // 3. MESAJI OLUŞTUR (Normal yazıyoruz, şifreleme yapmıyoruz)
 
     const message = `Merhaba Curly Design! 
 
@@ -81,11 +80,11 @@ function sendOrder() {
 *Renk:* ${selectedColor}
 *Not/İsim:* ${note}`;
 
-    // 4. URL OLUŞTURMA (Hepsini tek seferde burada şifreliyoruz)
     const finalUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
     
-    // 5. YÖNLENDİRME
+ 
     window.open(finalUrl, '_blank');
 }
+
 
 
