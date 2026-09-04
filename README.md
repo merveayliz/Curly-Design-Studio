@@ -42,12 +42,3 @@ This project is part of my professional development portfolio.
 * **Upcoming Goal:** Transitioning into Backend Development (Node.js & Databases) to turn these concepts into full-scale web applications.
 
 ---
-
-## 👩‍💻 About the Developer
-I am a dedicated **Web Design & Coding Student**, passionate about creating digital experiences that are both beautiful and functional. I post daily updates on my progress and new projects on LinkedIn.
-
-* **LinkedIn:** [Ayliz Azaklı](https://www.linkedin.com/in/ayliz-azaklı-74579b318/)
-* **GitHub:** [@merveayliz](https://github.com/merveayliz)
-
----
-*Disclaimer: This is a concept project created for educational and portfolio purposes. Product images and descriptions are placeholders for design demonstration.*
