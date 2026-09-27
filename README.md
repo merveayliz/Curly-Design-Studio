@@ -3,6 +3,7 @@
 
 Welcome to **Curly Design Studio**, a modern, responsive, and interactive landing page concept. This project was developed as a key milestone in my journey to becoming a Full-Stack Developer, focusing on mastering advanced Frontend techniques and JavaScript logic.
 
+
 ## 🚀 Overview
 Curly Design Studio is a showcase of how clean design meets functional code. The primary goal of this project was to move away from static HTML and implement dynamic content rendering using JavaScript.
 
