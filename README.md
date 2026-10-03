@@ -1,6 +1,5 @@
 # 🎨 Curly Design Studio | Concept Project
 
-
 Welcome to **Curly Design Studio**, a modern, responsive, and interactive landing page concept. This project was developed as a key milestone in my journey to becoming a Full-Stack Developer, focusing on mastering advanced Frontend techniques and JavaScript logic.
 
 
