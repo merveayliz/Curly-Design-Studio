@@ -33,12 +33,3 @@ Instead of hardcoding every product and testimonial, I utilized **JavaScript Obj
 * **CSS3:** Custom animations, Flexbox, Grid, and responsive design.
 * **JavaScript (ES6+):** DOM manipulation, dynamic rendering, and event handling.
 * **GitHub Pages:** Deployment and hosting.
-
----
-
-## 📚 Learning Journey
-This project is part of my professional development portfolio. 
-* **Current Focus:** Mastering JavaScript Deep Dives & UI Animation.
-* **Upcoming Goal:** Transitioning into Backend Development (Node.js & Databases) to turn these concepts into full-scale web applications.
-
----
